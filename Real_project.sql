@@ -139,7 +139,7 @@ JOIN (
 ) s ON sp.salesman_id = s.salesman_id;
 
 
--- What is the name and age of the salesperson who generated the highest revenue in the year 2022? --Pending
+-- What is the name and age of the salesperson who generated the highest revenue in the year 2022? 
 select sp.name as Salesman_name, max(c.cost_$) as Revenue, sp.age  
 from cars c
 join sales s on s.car_id = c.car_id
