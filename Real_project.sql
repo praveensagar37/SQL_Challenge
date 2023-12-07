@@ -118,10 +118,9 @@ join sales s on s.car_id = c.car_id
 WHERE YEAR(s.purchase_date) = 2022
 group by c.style having c.style ='SUV';
 
--- 9. What is the name and city of the salesperson who sold the most number of cars in the year 2023?--Pending
+-- 9. What is the name and city of the salesperson who sold the most number of cars in the year 2023?
 select max(s.car_id) as number_of_cars, sp.name, sp.city 
 from sales s
--- join cars c on c.car_id = s.car_id
 join salespersons sp on sp.salesman_id = s.salesman_id
 where s.purchase_date >='2022-12-31'
 group by name, city order by number_of_cars desc
@@ -139,7 +138,7 @@ JOIN (
 ) s ON sp.salesman_id = s.salesman_id;
 
 
--- What is the name and age of the salesperson who generated the highest revenue in the year 2022? 
+-- What is the name and age of the salesperson who generated the highest revenue in the year 2022?
 select sp.name as Salesman_name, max(c.cost_$) as Revenue, sp.age  
 from cars c
 join sales s on s.car_id = c.car_id
